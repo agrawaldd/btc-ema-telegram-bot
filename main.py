@@ -20,7 +20,7 @@ def bearish(r):
 
 last_signal = None
 
-send_alert("✅ BTC EMA BOT STARTED")
+
 
 while True:
     try:
