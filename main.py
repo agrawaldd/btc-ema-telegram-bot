@@ -24,7 +24,7 @@ last_signal = None
 
 while True:
     try:
-        data = exchange.fetch_ohlcv("BTC/USDT", timeframe="3h", limit=100)
+        data = exchange.fetch_ohlcv("BTC/USDT", timeframe="1h", limit=100)
         df = pd.DataFrame(data, columns=["time","open","high","low","close","volume"])
 
         for p in [5, 7, 10, 13, 21, 34]:
