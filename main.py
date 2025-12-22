@@ -10,7 +10,8 @@ def send_alert(msg):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, json={"chat_id": CHAT_ID, "text": msg})
 
-exchange = ccxt.bybit({'enableRateLimit': True})
+exchange = ccxt.okx({'enableRateLimit': True})
+
 
 
 def bullish(r):
