@@ -10,7 +10,8 @@ def send_alert(msg):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, json={"chat_id": CHAT_ID, "text": msg})
 
-exchange = ccxt.binance({'enableRateLimit': True})
+exchange = ccxt.bybit({'enableRateLimit': True})
+
 
 def bullish(r):
     return r.ema5 > r.ema7 > r.ema10 > r.ema13 > r.ema21 > r.ema34
