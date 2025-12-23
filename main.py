@@ -29,7 +29,7 @@ while True:
     try:
         data = exchange.fetch_ohlcv(
             "BTC/USDT:USDT",
-            timeframe="1h",
+            timeframe="15m",
             limit=100
         )
 
@@ -60,12 +60,12 @@ while True:
             and bullish(prev)
             and last_early != "SHORT"
         ):
-            send_alert("⚠️ BTC EARLY SHORT (1H bar)")
+            send_alert("⚠️ BTC CONFIRMED Goo for Short Sell")
             last_early = "SHORT"
 
         # ===== CONFIRMATION ALERT (AFTER BAR CLOSE) =====
         if bullish(prev) and last_confirmed != "LONG":
-            send_alert("✅ BTC CONFIRMED LONG (1H close)")
+            send_alert("✅ BTC CONFIRMED Goo for Longs")
             last_confirmed = "LONG"
 
         elif bearish(prev) and last_confirmed != "SHORT":
